@@ -16,16 +16,12 @@ interface PageProps {
 export async function generateStaticParams() {
   const makes = await fetchMakes();
 
-  console.log(makes);
-
   const params = makes.flatMap((make) =>
     YEARS.map((year) => ({
       makeId: String(make.MakeId),
       year: String(year),
     }))
   );
-
-  console.log(params);
 
   return params;
 }
