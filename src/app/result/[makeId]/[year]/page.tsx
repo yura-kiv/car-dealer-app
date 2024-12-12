@@ -41,22 +41,19 @@ export default async function ResultPage({ params }: PageProps) {
   const { makeId, year } = await params;
 
   return (
-    <main className='flex flex-col items-center justify-center min-h-screen bg-gray-50'>
-      <h1 className='text-2xl font-bold text-gray-900 mb-4'>Car Models</h1>
-      <p className='text-gray-700 mb-6'>
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <h1 className="text-2xl font-bold text-gray-900 mb-4">Car Models</h1>
+      <p className="text-gray-700 mb-6">
         Available models for Make ID {makeId} in {year}:
       </p>
 
       <Suspense fallback={<LoadingSpinner />}>
-        <ModelsSection
-          makeId={makeId}
-          year={year}
-        />
+        <ModelsSection makeId={makeId} year={year} />
       </Suspense>
 
       <Link
-        href='/'
-        className='mt-6 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700'
+        href="/"
+        className="mt-6 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
       >
         Back to Home
       </Link>

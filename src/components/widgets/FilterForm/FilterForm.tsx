@@ -14,10 +14,10 @@ const FilterForm: React.FC<FilterFormProps> = ({ makes }) => {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
 
   return (
-    <div className='space-y-4 w-full max-w-md'>
+    <div className="space-y-4 w-full max-w-md">
       <Dropdown
-        id='make'
-        label='Select Vehicle Make'
+        id="make"
+        label="Select Vehicle Make"
         value={selectedMake}
         onChange={(value) => setSelectedMake(Number(value))}
         options={makes.map((make) => ({
@@ -26,8 +26,8 @@ const FilterForm: React.FC<FilterFormProps> = ({ makes }) => {
         }))}
       />
       <Dropdown
-        id='year'
-        label='Select Model Year'
+        id="year"
+        label="Select Model Year"
         value={selectedYear}
         onChange={(value) => setSelectedYear(Number(value))}
         options={YEARS.map((year) => ({
@@ -36,7 +36,7 @@ const FilterForm: React.FC<FilterFormProps> = ({ makes }) => {
         }))}
       />
       <Button
-        label='Next'
+        label="Next"
         disabled={!selectedMake || !selectedYear}
         href={
           selectedMake && selectedYear

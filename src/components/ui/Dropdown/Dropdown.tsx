@@ -19,10 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   return (
     <div>
-      <label
-        htmlFor={id}
-        className='block text-sm font-medium text-gray-700'
-      >
+      <label htmlFor={id} className="block text-sm font-medium text-gray-700">
         {label}
       </label>
       <select
@@ -34,17 +31,11 @@ const Dropdown: React.FC<DropdownProps> = ({
           disabled ? 'bg-gray-100 cursor-not-allowed' : ''
         }`}
       >
-        <option
-          value=''
-          disabled
-        >
+        <option value="" disabled>
           Select an option
         </option>
         {options.map((option) => (
-          <option
-            key={option.value}
-            value={option.value}
-          >
+          <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}
