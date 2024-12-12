@@ -14,12 +14,12 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     plugins: {
-      prettier: prettierPlugin, // Указываем плагин через импорт
+      prettier: prettierPlugin,
     },
     rules: {
-      'prettier/prettier': 'warn', // Интеграция Prettier
-      'react/react-in-jsx-scope': 'off', // Next.js не требует импорта React
-      'no-console': 'warn', // Предупреждение для console.log
+      'prettier/prettier': 'warn',
+      'react/react-in-jsx-scope': 'off',
+      'no-console': 'warn',
     },
   },
 ];
