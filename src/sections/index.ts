@@ -1,2 +1,2 @@
 export * from './FilterSection';
-export * from './ModelList';
+export * from './ModelsSection';

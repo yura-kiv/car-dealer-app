@@ -1,4 +1,2 @@
-export * from './Button';
-export * from './Dropdown';
-export * from './LoadingSpinner';
-export * from './ErrorBoundary';
+export * from './ui';
+export * from './widgets';

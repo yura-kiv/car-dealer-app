@@ -1,16 +1,14 @@
-import { fetchModelsByMakeAndYear } from '@/lib';
+import { Model } from '@/types';
+import React from 'react';
 
 interface ModelListProps {
-  makeId: string;
-  year: string;
+  models: Model[];
 }
 
-const ModelList: React.FC<ModelListProps> = async ({ makeId, year }) => {
-  const models = await fetchModelsByMakeAndYear(Number(makeId), Number(year));
-
+const ModelList: React.FC<ModelListProps> = ({ models }) => {
   if (!models.length) {
     return (
-      <p className='text-gray-700'>
+      <p className='text-gray-700 text-lg font-medium'>
         No models found for the selected make and year.
       </p>
     );

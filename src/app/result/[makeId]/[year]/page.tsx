@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
-import { LoadingSpinner } from '@/components';
-import { ModelList } from '@/sections';
+import { LoadingSpinner } from '@/components/ui';
+import { ModelsSection } from '@/sections';
 
 interface PageProps {
   params: {
@@ -33,7 +33,7 @@ export default async function ResultPage({ params }: PageProps) {
       </p>
 
       <Suspense fallback={<LoadingSpinner />}>
-        <ModelList
+        <ModelsSection
           makeId={makeId}
           year={year}
         />

@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/Dropdown/Dropdown.tss"
+    "src/components/ui/Dropdown/Dropdown.tss"
   ],
   "exclude": ["node_modules"]
 }
