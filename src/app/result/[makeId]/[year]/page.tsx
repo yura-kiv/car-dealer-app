@@ -7,14 +7,16 @@ import { fetchMakes } from '@/lib';
 import { YEARS } from '@/constants';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     makeId: string;
     year: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
   const makes = await fetchMakes();
+
+  console.log(makes);
 
   const params = makes.flatMap((make) =>
     YEARS.map((year) => ({
@@ -22,6 +24,8 @@ export async function generateStaticParams() {
       year: String(year),
     }))
   );
+
+  console.log(params);
 
   return params;
 }
@@ -37,7 +41,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ResultPage({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { makeId, year } = await params;
 
   return (

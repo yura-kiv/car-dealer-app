@@ -16,7 +16,7 @@ const ModelList: React.FC<ModelListProps> = ({ models }) => {
 
   return (
     <ul className="w-full max-w-md space-y-4 overflow-y-auto max-h-[60vh]">
-      {models.map(({ Make_ID, Make_Name, Model_ID, Model_Name }) => (
+      {models.map(({ Make_Name, Model_ID, Model_Name }) => (
         <li
           key={Model_ID}
           className="p-4 bg-white rounded-lg shadow-md border border-gray-200"
