@@ -3,12 +3,27 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/components/ui';
 import { ModelsSection } from '@/sections';
+import { fetchMakes } from '@/lib';
+import { YEARS } from '@/constants';
 
 interface PageProps {
   params: {
     makeId: string;
     year: string;
   };
+}
+
+export async function generateStaticParams() {
+  const makes = await fetchMakes();
+
+  const params = makes.flatMap((make) =>
+    YEARS.map((year) => ({
+      makeId: String(make.MakeId),
+      year: String(year),
+    }))
+  );
+
+  return params;
 }
 
 export async function generateMetadata({
