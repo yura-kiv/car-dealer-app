@@ -14,16 +14,19 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const makes = await fetchMakes();
-
-  const params = makes.flatMap((make) =>
-    YEARS.map((year) => ({
-      makeId: String(make.MakeId),
-      year: String(year),
-    }))
-  );
-
-  return params;
+  try {
+    const makes = await fetchMakes();
+    const params = makes.flatMap((make) =>
+      YEARS.map((year) => ({
+        makeId: String(make.MakeId),
+        year: String(year),
+      }))
+    );
+    return params;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
 }
 
 export async function generateMetadata({
